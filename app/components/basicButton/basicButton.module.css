@@ -1,0 +1,17 @@
+.basicBtn {
+    display: flex;
+    font-size: 16px;
+    font-weight: 400;
+    background: linear-gradient(90deg, #627EEA 54.37%, #EC4467 111.49%);
+    box-shadow: 0px 0px 30px 14px #B643ED4A;
+    border-radius: 3px;
+    justify-content: center;
+    color: white;
+    border: 0;
+    cursor: pointer;
+}
+
+.basicBtn:hover {
+    opacity: 75%;
+    transition: 0.5s;
+}
