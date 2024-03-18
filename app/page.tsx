@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { cinzel } from "./fonts";
+import { cinzel } from "../fonts/fonts";
 import phantomIcon from "../public/phantomIcon.png";
 import BasicButton from "./components/basicButton/basicButton";
 import ConnectButton from "./components/ConnectButton/ConnectButton";

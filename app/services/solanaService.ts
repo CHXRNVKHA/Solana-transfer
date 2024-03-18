@@ -1,24 +1,32 @@
-import { Connection, PublicKey, SystemProgram, Transaction } from "@solana/web3.js";
+import { ConnectionStatus } from "@/enums/ConnectionStatus";
+import {
+  Connection,
+  PublicKey,
+  SystemProgram,
+  Transaction,
+} from "@solana/web3.js";
+
+const { NEXT_PUBLIC_SOLANA_API_URL } = process.env;
 
 export const fetchRecentBlockhash = async () => {
   const connection = new Connection(
-    "https://api.devnet.solana.com",
-    "confirmed"
+    NEXT_PUBLIC_SOLANA_API_URL || "https://api.devnet.solana.com",
+    ConnectionStatus.Confirmed,
   );
   const blockhash = await connection.getLatestBlockhash();
   return blockhash.blockhash;
 };
 
 export const transfer = async (
-    destinationAddress: string,
-    sourceAccount: string,
-    recentBlockhash: string,
-    amount: string,
+  destinationAddress: string,
+  sourceAccount: string,
+  recentBlockhash: string,
+  amount: string
 ) => {
   try {
     const connection = new Connection(
-      "https://api.devnet.solana.com",
-      "confirmed"
+      NEXT_PUBLIC_SOLANA_API_URL || "https://api.devnet.solana.com",
+      ConnectionStatus.Confirmed,
     );
 
     const destinationPublicKey = new PublicKey(destinationAddress);
